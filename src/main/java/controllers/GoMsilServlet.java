@@ -1,26 +1,25 @@
 package main.java.controllers;
 
-import main.java.model.entity.Users;
-import main.java.services.UsersService;
-import main.java.services.UsersServiceImpl;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-public class ListController extends HttpServlet {
+/**
+ * Created by admin on 27.04.2017.
+ */
+public class GoMsilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("value", "Hello,student");
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/list.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/gomail.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
 }
+

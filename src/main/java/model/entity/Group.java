@@ -1,10 +1,6 @@
 package main.java.model.entity;
-
-/**
- * Created by Olesya on 18.04.2017.
- */
-public class Group {
-
+public class Group
+{
     private long id;
     private String name;
 

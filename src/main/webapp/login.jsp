@@ -23,8 +23,12 @@
             <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
                 <form class="col s12" method="post">
+
                     <div class="row">
                         <div class="col s12">
+                            <% if (request.getAttribute("error") != null) { %>
+                            <p><%= request.getAttribute("error") %></p>
+                            <% } %>
                         </div>
                     </div>
 

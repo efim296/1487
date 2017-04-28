@@ -1,8 +1,4 @@
 package main.java.model.entity;
-
-/**
- * Created by Olesya on 18.04.2017.
- */
 public class Users {
     private int id;
     private String name;
@@ -10,10 +6,9 @@ public class Users {
     private String token;
     private boolean verification;
     private String pass;
-
-    public Users() {
+    public Users()
+    {
     }
-
     public Users(int id, String name, String email, String token, boolean verification, String pass) {
         this.id = id;
         this.name = name;

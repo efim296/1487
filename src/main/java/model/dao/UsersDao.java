@@ -1,10 +1,9 @@
 package main.java.model.dao;
-
 import main.java.model.entity.Users;
 
 import java.util.List;
-
-public interface UsersDao {
+public interface UsersDao
+{
     List<Users> findAll();
 
     Users findById(long id);
@@ -15,11 +14,15 @@ public interface UsersDao {
 
     int update(Users users);
 
-
     Users getUserByEmail(String email);
 
-     boolean validate(String email);
+    Users setUserRegistration(String name, String email, String pass);
 
+    String TokenGenerator();
 
+    boolean hasUser(String token);
 
+     boolean activateUser(String token);
+
+    boolean validate(String email);
 }

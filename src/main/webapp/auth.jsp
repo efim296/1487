@@ -1,20 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Artem Panasyuk
+  User: admin
   Date: 19.04.2017
-  Time: 10:54
+  Time: 16:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Titlккккккккккe</title>
 </head>
 <body>
-<%=request.getAttribute("value")%>
-<h1>
-    ZADACHI
-</h1>
+<h1>AUTH</h1>
+
 
 </body>
 </html>

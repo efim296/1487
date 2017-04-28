@@ -12,6 +12,7 @@
 </head>
 <body>
 <a href="//localhost:8082/z/login">страница авторизации</a>
+<a href="//localhost:8082/z/registr">    страница регистрации</a>
 
 </body>
 </html>
