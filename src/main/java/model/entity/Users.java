@@ -1,4 +1,9 @@
 package main.java.model.entity;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Users {
     private int id;
     private String name;
@@ -6,9 +11,10 @@ public class Users {
     private String token;
     private boolean verification;
     private String pass;
-    public Users()
-    {
+
+    public Users() {
     }
+
     public Users(int id, String name, String email, String token, boolean verification, String pass) {
         this.id = id;
         this.name = name;
@@ -30,6 +36,7 @@ public class Users {
         return name;
     }
 
+    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
@@ -38,21 +45,36 @@ public class Users {
         return email;
     }
 
+    @XmlElement
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getToken(){return token;}
+    public String getToken() {
+        return token;
+    }
 
-    public void setToken(String token){this.token = token;}
+    @XmlElement
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-    public boolean getVerification() {return verification;}
+    public boolean getVerification() {
+        return verification;
+    }
 
-    public void setVerification(boolean verification){this.verification= verification;}
+    @XmlElement
+    public void setVerification(boolean verification) {
+        this.verification = verification;
+    }
 
-    public String getPass() {return pass;}
+    public String getPass() {
+        return pass;
+    }
 
-    public void setPass(String pass){this.pass = pass;}
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
     @Override
     public String toString() {

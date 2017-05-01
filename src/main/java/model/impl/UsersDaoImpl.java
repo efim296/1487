@@ -237,4 +237,43 @@ public class UsersDaoImpl implements UsersDao {
 
     }
 
+    public void saveUser(Users user) {
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5433/lab", "postgres", "yecgaa");
+            String token = this.TokenGenerator();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users(name, email, token, pass) VALUES ('" + user.getName() + "', '" + user.getEmail() + "','" + token + "', '" + user.getPass() + "')");
+            resultSet = preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public List<Users> getUsers() {
+        List<Users> usersList = new ArrayList<>();
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5433/lab", "postgres", "yecgaa");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users");
+            ResultSet result = preparedStatement.executeQuery();
+            while (result.next()) {
+                Users user = new Users();
+                user.setId(result.getInt(1));
+                user.setName(result.getString(2));
+                user.setEmail(result.getString(3));
+                user.setToken(result.getString(4));
+                user.setVerification(result.getBoolean(5));
+                user.setPass(result.getString(6));
+                usersList.add(user);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return usersList;
+    }
+
+
 }

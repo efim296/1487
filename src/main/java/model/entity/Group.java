@@ -1,6 +1,6 @@
 package main.java.model.entity;
-public class Group
-{
+
+public class Group {
     private long id;
     private String name;
 

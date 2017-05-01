@@ -25,4 +25,8 @@ public interface UsersDao
      boolean activateUser(String token);
 
     boolean validate(String email);
+
+    void saveUser(Users user);
+
+    List<Users> getUsers();
 }

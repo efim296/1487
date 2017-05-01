@@ -22,17 +22,15 @@ public class AuthServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/auth.jsp");
 
-       boolean isLogin = service.activateUser(token);
-       if(isLogin){
-           // авторизация (запись в сессию токен)
-           HttpSession session = req.getSession();
-           session.setAttribute("token", token);
-           resp.sendRedirect("/z/tasks");
-       }else {
-           resp.sendRedirect("/z/login");
-       }
-
-//        dispatcher.forward(req, resp);
+        boolean isLogin = service.activateUser(token);
+        if (isLogin) {
+            // авторизация (запись в сессию токен)
+            HttpSession session = req.getSession();
+            session.setAttribute("token", token);
+            resp.sendRedirect("/z/tasks");
+        } else {
+            resp.sendRedirect("/z/login");
+        }
     }
 
     @Override

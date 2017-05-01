@@ -11,9 +11,7 @@ import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.util.Properties;
 
-/**
- * Created by Nemesis on 14.04.17.
- */
+
 public class Mailer {
     private final String username = "salvatore296@mail.ru";
     private final String password = "yecgaa";
@@ -53,9 +51,9 @@ public class Mailer {
                 message.setContent(multipart);
             } else
 
-           message.setContent(lal, "text/html; charset=utf-8");
+                message.setContent(lal, "text/html; charset=utf-8");
 
-                Transport.send(message);
+            Transport.send(message);
 
         } catch (MessagingException e) {
             return false;
