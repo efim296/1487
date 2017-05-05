@@ -1,4 +1,4 @@
-Коннекшен к базе см класс main.java.services.DataSourceFactory
+Коннекшен к базе см класс main.java.ru.innopolis.services.DataSourceFactory
 
 Запуск main.Main
 
